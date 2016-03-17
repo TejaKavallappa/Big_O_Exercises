@@ -1,3 +1,26 @@
+#PHASE IV_bonus
+def bonus_anagram?(word1, word2)
+  hash = Hash.new(0)
+  word1.chars.each {|letter| hash[letter] += 1}
+  word2.chars.each {|letter| hash[letter] -= 1}
+  hash.all? {|_,value| value == 0}
+end
+
+
+#PHASE IV
+def fourth_anagram?(word1, word2)
+  hash1 = Hash.new(0)
+  hash2 = Hash.new(0)
+  word1.chars.each {|letter| hash1[letter] += 1}
+  word2.chars.each {|letter| hash2[letter] += 1}
+  hash1 == hash2
+end
+
+#PHASE III
+def third_anagram?(word1, word2)
+  word1.chars.sort == word2.chars.sort
+end
+
 #PHASE II
 def second_anagram?(word1, word2)
   char_list = word1.split("")
